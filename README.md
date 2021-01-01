@@ -7,4 +7,4 @@ To create app i used nodejs, Express.js, Tesseract JS and Vanilla JavaScript.
 
 To use app simply Upload the file and click on Show the Pic.
 
-<img src="./PicsForReadMe/Tesseract-Pic.png">
+<img src="./PicsForReadMe/Tesseract-Pic.PNG">
