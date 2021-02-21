@@ -15,7 +15,10 @@ app.use(
 );
 
 //add other middleware
-app.use(cors());
+app.use(cors({
+  origin: 'https://bill-checker-d1256.web.app/',
+  methods: ['GET','POST']
+}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("uploads"));
@@ -27,10 +30,11 @@ let imgArr = {};
 
 const corsOptions = {
   origin: 'https://bill-checker-d1256.web.app/',
+
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
 
-app.post("/",cors(), async (req, res) => {
+app.post("/", async (req, res) => {
   try {
     if (!req.files) {
       res.send({
@@ -65,7 +69,7 @@ app.post("/",cors(), async (req, res) => {
 });
 
 
-app.get("/",cors(), function (req, res, next) {
+app.get("/", function (req, res, next) {
   try {
     res.sendFile(path.join(__dirname + "/uploads/" + imgArr.name)); //path to last file
     fileUpload.FileArray;
