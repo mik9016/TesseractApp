@@ -34,7 +34,7 @@ const corsOptions = {
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
 
-app.post("/", async (req, res) => {
+app.post("/",cors(), async (req, res) => {
   try {
     if (!req.files) {
       res.send({
@@ -69,7 +69,7 @@ app.post("/", async (req, res) => {
 });
 
 
-app.get("/", function (req, res, next) {
+app.get("/",cors(), function (req, res, next) {
   try {
     res.sendFile(path.join(__dirname + "/uploads/" + imgArr.name)); //path to last file
     fileUpload.FileArray;
