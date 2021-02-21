@@ -1,10 +1,10 @@
+
 const express = require("express");
 const fileUpload = require("express-fileupload");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const path = require("path");
 const fs = require("fs");
-
 const app = express();
 
 // enable files upload
@@ -24,6 +24,7 @@ app.use(express.static("uploads"));
 const port = process.env.PORT || 3000;
 
 let imgArr = {};
+
 
 app.post("/upload-picture", async (req, res) => {
   try {
@@ -58,6 +59,7 @@ app.post("/upload-picture", async (req, res) => {
     res.status(500).send(err);
   }
 });
+
 
 app.get("/upload-picture", function (req, res, next) {
   try {
