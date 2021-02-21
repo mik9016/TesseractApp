@@ -15,10 +15,7 @@ app.use(
 );
 
 //add other middleware
-app.use(cors({
-  origin: 'https://bill-checker-d1256.web.app/',
-  methods: ['GET','POST']
-}));
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("uploads"));
